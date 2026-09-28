@@ -1,4 +1,7 @@
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Rediscover — a Google Maps concept that resurfaces the places you saved but never visited. Interactive prototype by Cindy Ly.">
+<meta name="theme-color" content="#ffffff">
 <title>Rediscover — Google Maps</title>
 <style>
   @font-face {
@@ -303,7 +306,9 @@
     width:56px; height:56px; border-radius:14px; flex:none;
     display:flex; align-items:center; justify-content:center; font-size:26px;
     box-shadow:inset 0 0 0 .5px rgba(60,64,67,.10);
+    overflow:hidden;
   }
+  .thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
   .t-skalka{ background:linear-gradient(140deg,#F8E4C1,#E9B673); }
   .t-coffee{ background:linear-gradient(140deg,#EFDFC8,#C89B6B); }
   .t-hotpot{ background:linear-gradient(140deg,#FBD9CF,#F08A72); }
@@ -423,7 +428,7 @@
 
       <div class="placelist">
         <div class="place p-unv" id="skrow" style="cursor:pointer">
-          <div class="thumb t-skalka">🥖</div>
+          <div class="thumb t-skalka"><img src="@@TH_skalka@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Skalka</div>
             <div class="pmeta">Georgian restaurant</div>
@@ -432,7 +437,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-unv">
-          <div class="thumb t-coffee">☕</div>
+          <div class="thumb t-coffee"><img src="@@TH_olympia@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Olympia Coffee Roasting</div>
             <div class="pmeta">Coffee shop</div>
@@ -441,7 +446,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-vis">
-          <div class="thumb t-diner">🥣</div>
+          <div class="thumb t-diner"><img src="@@TH_chowder@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Pike Place Chowder</div>
             <div class="pmeta">Seafood restaurant</div>
@@ -450,7 +455,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-unv">
-          <div class="thumb t-hotpot">🍲</div>
+          <div class="thumb t-hotpot"><img src="@@TH_qiaolin@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Qiao Lin Hotpot</div>
             <div class="pmeta">Hot pot restaurant</div>
@@ -459,7 +464,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-vis">
-          <div class="thumb t-skalka">🥐</div>
+          <div class="thumb t-skalka"><img src="@@TH_lepanier@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Le Panier</div>
             <div class="pmeta">Bakery</div>
@@ -468,7 +473,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-unv">
-          <div class="thumb t-diner">🍳</div>
+          <div class="thumb t-diner"><img src="@@TH_5point@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">The 5 Point Cafe</div>
             <div class="pmeta">Diner</div>
@@ -477,7 +482,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-vis">
-          <div class="thumb t-coffee">☕</div>
+          <div class="thumb t-coffee"><img src="@@TH_storyville@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Storyville Coffee</div>
             <div class="pmeta">Coffee shop</div>
@@ -486,7 +491,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-unv">
-          <div class="thumb t-green">🍵</div>
+          <div class="thumb t-green"><img src="@@TH_nanas@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Nana's Green Tea</div>
             <div class="pmeta">Japanese cafe</div>
@@ -495,7 +500,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-vis">
-          <div class="thumb t-pink">🧋</div>
+          <div class="thumb t-pink"><img src="@@TH_heytea@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">HEYTEA</div>
             <div class="pmeta">Bubble tea</div>
@@ -504,7 +509,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-vis">
-          <div class="thumb t-hotpot">🍜</div>
+          <div class="thumb t-hotpot"><img src="@@TH_phobac@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Pho Bac</div>
             <div class="pmeta">Vietnamese restaurant</div>
@@ -513,7 +518,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-unv">
-          <div class="thumb t-gold">🧀</div>
+          <div class="thumb t-gold"><img src="@@TH_cheeseroom@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Cheese Room</div>
             <div class="pmeta">Cheese shop</div>
@@ -522,7 +527,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-vis">
-          <div class="thumb t-gold">🍔</div>
+          <div class="thumb t-gold"><img src="@@TH_lilwoodys@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Lil Woody's</div>
             <div class="pmeta">Burger joint</div>
@@ -531,7 +536,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-unv">
-          <div class="thumb t-coffee">☕</div>
+          <div class="thumb t-coffee"><img src="@@TH_howdy@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Howdy Y'all Coffee</div>
             <div class="pmeta">Coffee shop</div>
@@ -540,7 +545,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-unv">
-          <div class="thumb t-green">🍵</div>
+          <div class="thumb t-green"><img src="@@TH_taz@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Taz Matcha</div>
             <div class="pmeta">Matcha cafe</div>
@@ -549,7 +554,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-unv">
-          <div class="thumb t-diner">🍳</div>
+          <div class="thumb t-diner"><img src="@@TH_ludis@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Ludi's Restaurant</div>
             <div class="pmeta">Filipino restaurant</div>
@@ -558,7 +563,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-vis">
-          <div class="thumb t-gold">🫒</div>
+          <div class="thumb t-gold"><img src="@@TH_lola@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Lola</div>
             <div class="pmeta">Greek restaurant</div>
@@ -567,7 +572,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-vis">
-          <div class="thumb t-pink">🍩</div>
+          <div class="thumb t-pink"><img src="@@TH_toppot@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Top Pot Doughnuts</div>
             <div class="pmeta">Doughnut shop</div>
@@ -576,7 +581,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-unv">
-          <div class="thumb t-slate">🍣</div>
+          <div class="thumb t-slate"><img src="@@TH_fob@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">FOB Sushi Bar</div>
             <div class="pmeta">Sushi restaurant</div>
@@ -585,7 +590,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-unv">
-          <div class="thumb t-coffee">☕</div>
+          <div class="thumb t-coffee"><img src="@@TH_aroom@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Aroom Coffee</div>
             <div class="pmeta">Coffee shop</div>
@@ -594,7 +599,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-vis">
-          <div class="thumb t-gold">🌮</div>
+          <div class="thumb t-gold"><img src="@@TH_rojos@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Rojo's Mexican Food</div>
             <div class="pmeta">Mexican restaurant</div>
@@ -603,7 +608,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-unv">
-          <div class="thumb t-skalka">🥐</div>
+          <div class="thumb t-skalka"><img src="@@TH_dahlia@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Dahlia Bakery</div>
             <div class="pmeta">Bakery</div>
@@ -612,7 +617,7 @@
           <span class="pdots"><svg width="20" height="20" viewBox="0 0 24 24" fill="#444746"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>
         </div>
         <div class="place p-vis">
-          <div class="thumb t-slate">🍸</div>
+          <div class="thumb t-slate"><img src="@@TH_bathtub@@" alt="" loading="lazy" decoding="async"></div>
           <div class="ptext">
             <div class="pname">Bathtub Gin & Co.</div>
             <div class="pmeta">Cocktail bar</div>
