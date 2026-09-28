@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Rediscover — a Google Maps concept that resurfaces the places you saved but never visited. Interactive prototype by Cindy Ly.">
-<meta name="theme-color" content="#F7F6F1">
+<meta name="theme-color" content="#FFFFFF">
 <!-- home-screen app: full-bleed standalone on iOS/Android -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -28,7 +28,7 @@
   html,body{ margin:0; height:100%; overscroll-behavior:none; }
   body{
     font-family:'Google Sans','DM Sans',-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background-color:#F7F6F1;
+    background-color:#FFFFFF;
     position:relative; overflow:hidden; height:100dvh;
     display:flex; align-items:center; justify-content:center;
     -webkit-font-smoothing:antialiased; user-select:none; -webkit-user-select:none;
@@ -44,10 +44,10 @@
     background:conic-gradient(from 0deg at 50% 49%,
       #7A6BE0 0deg, #4285F4 45deg, #34A853 110deg, #34A853 190deg,
       #FBBC04 235deg, #EA4335 285deg, #A259C8 330deg, #7A6BE0 360deg);
-    -webkit-mask:radial-gradient(48% 52% at 50% 49%, transparent 30%, #000 52%, #000 64%, transparent 88%);
-            mask:radial-gradient(48% 52% at 50% 49%, transparent 30%, #000 52%, #000 64%, transparent 88%);
-    filter:blur(56px) saturate(1.05);
-    opacity:.42;
+    -webkit-mask:radial-gradient(46% 50% at 50% 49%, transparent 26%, #000 40%, #000 50%, transparent 82%);
+            mask:radial-gradient(46% 50% at 50% 49%, transparent 26%, #000 40%, #000 50%, transparent 82%);
+    filter:blur(48px);
+    opacity:.24;
     transform-origin:50% 49%;
     animation:halo 16s ease-in-out infinite;
     will-change:transform, opacity;
@@ -57,9 +57,9 @@
     background:radial-gradient(34% 40% at 50% 47%, rgba(255,255,255,1), rgba(255,255,255,0) 72%);
   }
   @keyframes halo{
-    0%, 100%{ transform:scale(1)    rotate(0deg);  opacity:.40; }
-    35%     { transform:scale(1.06) rotate(4deg);  opacity:.50; }
-    68%     { transform:scale(1.02) rotate(-3deg); opacity:.44; }
+    0%, 100%{ transform:scale(1)    rotate(0deg);  opacity:.22; }
+    35%     { transform:scale(1.06) rotate(4deg);  opacity:.28; }
+    68%     { transform:scale(1.02) rotate(-3deg); opacity:.24; }
   }
   .phone{
     position:relative; flex:none; padding:9px; border-radius:65px;
@@ -364,7 +364,7 @@
   @media (prefers-reduced-motion: reduce){
     *,*::before,*::after{ animation-duration:.01ms !important; animation-delay:0ms !important; }
     .dotpulse{ animation:none !important; }
-    body::before{ animation:none !important; opacity:.44; }
+    body::before{ animation:none !important; opacity:.24; }
     .sheet{ transition-duration:.01ms; }
   }
 </style>
