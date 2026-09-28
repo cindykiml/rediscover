@@ -34,36 +34,29 @@
     -webkit-font-smoothing:antialiased; user-select:none; -webkit-user-select:none;
   }
   /* ambient backdrop: the Google Maps pin's colour wheel (red -> purple -> blue ->
-     green -> yellow, clockwise from the left) as a soft blurred ring that breathes
-     slowly behind the phone; a white core keeps the frame on a calm ground */
-  body::before, body::after{
-    content:''; position:absolute; z-index:-1; pointer-events:none;
-  }
+     green -> yellow) as one soft glow sitting directly behind the phone. Sized in vh
+     so it tracks the phone (which is scaled to viewport height) on any screen. */
   body::before{
-    inset:-12%;
+    content:''; position:absolute; inset:-12%; z-index:-1; pointer-events:none;
     background:conic-gradient(from var(--halo-a) at 50% 49%,
       #7A6BE0 0deg, #4285F4 45deg, #34A853 110deg, #34A853 190deg,
       #FBBC04 235deg, #EA4335 285deg, #A259C8 330deg, #7A6BE0 360deg);
-    -webkit-mask:radial-gradient(46% 50% at 50% 49%, transparent 26%, #000 40%, #000 50%, transparent 82%);
-            mask:radial-gradient(46% 50% at 50% 49%, transparent 26%, #000 40%, #000 50%, transparent 82%);
+    -webkit-mask:radial-gradient(40vh 60vh at 50% 49%, #000 38%, rgba(0,0,0,.55) 64%, transparent 100%);
+            mask:radial-gradient(40vh 60vh at 50% 49%, #000 38%, rgba(0,0,0,.55) 64%, transparent 100%);
     filter:blur(48px);
-    opacity:.24;
+    opacity:.28;
     transform-origin:50% 49%;
     animation:halo-spin 70s linear infinite, halo 14s ease-in-out infinite;
     will-change:transform, opacity;
-  }
-  body::after{
-    inset:0;
-    background:radial-gradient(34% 40% at 50% 47%, rgba(255,255,255,1), rgba(255,255,255,0) 72%);
   }
   /* the hue wheel drifts a full turn every 70s (browsers without @property keep it still) */
   @property --halo-a { syntax:'<angle>'; inherits:false; initial-value:0deg; }
   @keyframes halo-spin{ to{ --halo-a:360deg; } }
   /* ...while the ring itself breathes and wanders a little */
   @keyframes halo{
-    0%, 100%{ transform:scale(1)    translate(0,0);        opacity:.20; }
-    30%     { transform:scale(1.07) translate(1.2%,-.8%);  opacity:.29; }
-    62%     { transform:scale(1.02) translate(-1%,.9%);    opacity:.23; }
+    0%, 100%{ transform:scale(1)    translate(0,0);        opacity:.25; }
+    30%     { transform:scale(1.07) translate(1.2%,-.8%);  opacity:.33; }
+    62%     { transform:scale(1.02) translate(-1%,.9%);    opacity:.28; }
   }
   .phone{
     position:relative; flex:none; padding:9px; border-radius:65px;
@@ -368,7 +361,7 @@
   @media (prefers-reduced-motion: reduce){
     *,*::before,*::after{ animation-duration:.01ms !important; animation-delay:0ms !important; }
     .dotpulse{ animation:none !important; }
-    body::before{ animation:none !important; opacity:.24; }
+    body::before{ animation:none !important; opacity:.28; }
     .sheet{ transition-duration:.01ms; }
   }
 </style>
