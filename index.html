@@ -197,12 +197,12 @@
 
   /* ---------- press feedback (subtle, for screen recordings) ----------
      Maps itself barely does this; a quick dim on press, slower release. */
-  .chip.redisc, .closebtn, button.fchip, .mopt, .mclear, .mapply, .mx, .detailx, .featured, .grabber{
+  .closebtn, button.fchip, .mopt, .mclear, .mapply, .mx, .detailx, .featured, .grabber{
     -webkit-tap-highlight-color:transparent;
     transition:filter .35s ease;
   }
-  .chip.redisc{ transition:background .3s ease, color .3s ease, filter .35s ease; }
-  .chip.redisc:active, .closebtn:active, button.fchip:active, .mopt:active,
+  .chip.redisc{ -webkit-tap-highlight-color:transparent; }  /* no dim: it turns blue on its own */
+  .closebtn:active, button.fchip:active, .mopt:active,
   .mclear:active, .mapply:active, .mx:active, .detailx:active, .featured:active{
     filter:brightness(.93); transition-duration:.06s;
   }
