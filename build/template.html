@@ -674,7 +674,11 @@
   function fit(){
     const framed = matchMedia('(min-width:521px)').matches;
     const w = framed ? 456 : 430, h = framed ? 958 : 932;
-    outerScale = Math.min(innerWidth / w, innerHeight / h);
+    // desktop: leave ~7% breathing room around the frame and never upscale
+    // past natural size; phones fill the viewport exactly.
+    const room = framed ? 0.86 : 1;
+    outerScale = Math.min(innerWidth / w, innerHeight / h) * room;
+    if (framed) outerScale = Math.min(outerScale, 1);
     phone.style.transform = `scale(${outerScale})`;
   }
   fit();
