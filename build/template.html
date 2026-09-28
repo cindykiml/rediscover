@@ -21,12 +21,27 @@
   body{
     font-family:'Google Sans','DM Sans',-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     background-color:#F7F6F1;
-    background-image:
-      radial-gradient(36% 42% at 50% 46%, rgba(255,255,255,1), rgba(255,255,255,0) 72%),
-      radial-gradient(50% 56% at 50% 47%, rgba(172,223,232,.75), rgba(172,223,232,0) 74%);
-    overflow:hidden; height:100dvh;
+    position:relative; overflow:hidden; height:100dvh;
     display:flex; align-items:center; justify-content:center;
     -webkit-font-smoothing:antialiased; user-select:none; -webkit-user-select:none;
+  }
+  /* ambient backdrop: teal halo breathes slowly behind the phone, white core stays still */
+  body::before, body::after{
+    content:''; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  }
+  body::before{
+    background:radial-gradient(50% 56% at 50% 47%, rgba(172,223,232,.78), rgba(172,223,232,0) 74%);
+    transform-origin:50% 47%;
+    animation:halo 11s ease-in-out infinite;
+    will-change:transform, opacity;
+  }
+  body::after{
+    background:radial-gradient(36% 42% at 50% 46%, rgba(255,255,255,1), rgba(255,255,255,0) 72%);
+  }
+  @keyframes halo{
+    0%, 100%{ transform:scale(1) translate(0,0);        opacity:.82; }
+    38%     { transform:scale(1.08) translate(1.2%,-.6%); opacity:1;  }
+    70%     { transform:scale(1.03) translate(-.8%,.8%);  opacity:.9; }
   }
   .phone{
     position:relative; flex:none; padding:9px; border-radius:65px;
@@ -329,6 +344,7 @@
   @media (prefers-reduced-motion: reduce){
     *,*::before,*::after{ animation-duration:.01ms !important; animation-delay:0ms !important; }
     .dotpulse{ animation:none !important; }
+    body::before{ animation:none !important; opacity:.9; }
     .sheet{ transition-duration:.01ms; }
   }
 </style>
