@@ -41,7 +41,7 @@
   }
   body::before{
     inset:-12%;
-    background:conic-gradient(from 0deg at 50% 49%,
+    background:conic-gradient(from var(--halo-a) at 50% 49%,
       #7A6BE0 0deg, #4285F4 45deg, #34A853 110deg, #34A853 190deg,
       #FBBC04 235deg, #EA4335 285deg, #A259C8 330deg, #7A6BE0 360deg);
     -webkit-mask:radial-gradient(46% 50% at 50% 49%, transparent 26%, #000 40%, #000 50%, transparent 82%);
@@ -49,17 +49,21 @@
     filter:blur(48px);
     opacity:.24;
     transform-origin:50% 49%;
-    animation:halo 16s ease-in-out infinite;
+    animation:halo-spin 70s linear infinite, halo 14s ease-in-out infinite;
     will-change:transform, opacity;
   }
   body::after{
     inset:0;
     background:radial-gradient(34% 40% at 50% 47%, rgba(255,255,255,1), rgba(255,255,255,0) 72%);
   }
+  /* the hue wheel drifts a full turn every 70s (browsers without @property keep it still) */
+  @property --halo-a { syntax:'<angle>'; inherits:false; initial-value:0deg; }
+  @keyframes halo-spin{ to{ --halo-a:360deg; } }
+  /* ...while the ring itself breathes and wanders a little */
   @keyframes halo{
-    0%, 100%{ transform:scale(1)    rotate(0deg);  opacity:.22; }
-    35%     { transform:scale(1.06) rotate(4deg);  opacity:.28; }
-    68%     { transform:scale(1.02) rotate(-3deg); opacity:.24; }
+    0%, 100%{ transform:scale(1)    translate(0,0);        opacity:.20; }
+    30%     { transform:scale(1.07) translate(1.2%,-.8%);  opacity:.29; }
+    62%     { transform:scale(1.02) translate(-1%,.9%);    opacity:.23; }
   }
   .phone{
     position:relative; flex:none; padding:9px; border-radius:65px;
