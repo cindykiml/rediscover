@@ -25,23 +25,33 @@
     display:flex; align-items:center; justify-content:center;
     -webkit-font-smoothing:antialiased; user-select:none; -webkit-user-select:none;
   }
-  /* ambient backdrop: teal halo breathes slowly behind the phone, white core stays still */
+  /* ambient backdrop: the Google Maps pin's colour wheel (red -> purple -> blue ->
+     green -> yellow, clockwise from the left) as a soft blurred ring that breathes
+     slowly behind the phone; a white core keeps the frame on a calm ground */
   body::before, body::after{
-    content:''; position:absolute; inset:0; z-index:-1; pointer-events:none;
+    content:''; position:absolute; z-index:-1; pointer-events:none;
   }
   body::before{
-    background:radial-gradient(50% 56% at 50% 47%, rgba(172,223,232,.78), rgba(172,223,232,0) 74%);
-    transform-origin:50% 47%;
-    animation:halo 11s ease-in-out infinite;
+    inset:-12%;
+    background:conic-gradient(from 0deg at 50% 49%,
+      #7A6BE0 0deg, #4285F4 45deg, #34A853 110deg, #34A853 190deg,
+      #FBBC04 235deg, #EA4335 285deg, #A259C8 330deg, #7A6BE0 360deg);
+    -webkit-mask:radial-gradient(48% 52% at 50% 49%, transparent 30%, #000 52%, #000 64%, transparent 88%);
+            mask:radial-gradient(48% 52% at 50% 49%, transparent 30%, #000 52%, #000 64%, transparent 88%);
+    filter:blur(56px) saturate(1.05);
+    opacity:.42;
+    transform-origin:50% 49%;
+    animation:halo 16s ease-in-out infinite;
     will-change:transform, opacity;
   }
   body::after{
-    background:radial-gradient(36% 42% at 50% 46%, rgba(255,255,255,1), rgba(255,255,255,0) 72%);
+    inset:0;
+    background:radial-gradient(34% 40% at 50% 47%, rgba(255,255,255,1), rgba(255,255,255,0) 72%);
   }
   @keyframes halo{
-    0%, 100%{ transform:scale(1) translate(0,0);        opacity:.82; }
-    38%     { transform:scale(1.08) translate(1.2%,-.6%); opacity:1;  }
-    70%     { transform:scale(1.03) translate(-.8%,.8%);  opacity:.9; }
+    0%, 100%{ transform:scale(1)    rotate(0deg);  opacity:.40; }
+    35%     { transform:scale(1.06) rotate(4deg);  opacity:.50; }
+    68%     { transform:scale(1.02) rotate(-3deg); opacity:.44; }
   }
   .phone{
     position:relative; flex:none; padding:9px; border-radius:65px;
@@ -344,7 +354,7 @@
   @media (prefers-reduced-motion: reduce){
     *,*::before,*::after{ animation-duration:.01ms !important; animation-delay:0ms !important; }
     .dotpulse{ animation:none !important; }
-    body::before{ animation:none !important; opacity:.9; }
+    body::before{ animation:none !important; opacity:.44; }
     .sheet{ transition-duration:.01ms; }
   }
 </style>
