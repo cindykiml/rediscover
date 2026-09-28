@@ -1,4 +1,7 @@
 build
-*.PNG
-*.png
+reference.PNG
+reference_desktop.png
+stitch_1.PNG
+stitch_2.PNG
+skalka_full.PNG
 *.code-workspace

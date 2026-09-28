@@ -1,7 +1,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Rediscover — a Google Maps concept that resurfaces the places you saved but never visited. Interactive prototype by Cindy Ly.">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#F7F6F1">
+<!-- home-screen app: full-bleed standalone on iOS/Android -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Rediscover">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <title>Rediscover — Google Maps</title>
 <style>
   @font-face {
@@ -64,6 +72,8 @@
     overflow:hidden; background:#E9E8EC; border-radius:56px;
   }
   @media (max-width:520px){
+    body{ background:#E9E8EC; }
+    body::before, body::after{ display:none; }
     .phone{ padding:0; border-radius:0; background:none; box-shadow:none; }
     .app{ border-radius:0; }
   }
